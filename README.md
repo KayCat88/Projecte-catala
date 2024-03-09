@@ -1,2 +1,0 @@
-# Projecte-catala
- 
