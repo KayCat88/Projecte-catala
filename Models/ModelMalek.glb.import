@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgj7t5anliaxn"
-path="res://.godot/imported/Barco.glb-c142a2fcf7223718e5d6ec512b5e1447.scn"
+uid="uid://r4b77ddtw82"
+path="res://.godot/imported/ModelMalek.glb-ef8c48a6f3f0b7c336ce139af110c618.scn"
 
 [deps]
 
-source_file="res://Models/Barco.glb"
-dest_files=["res://.godot/imported/Barco.glb-c142a2fcf7223718e5d6ec512b5e1447.scn"]
+source_file="res://Models/ModelMalek.glb"
+dest_files=["res://.godot/imported/ModelMalek.glb-ef8c48a6f3f0b7c336ce139af110c618.scn"]
 
 [params]
 

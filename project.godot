@@ -13,6 +13,11 @@ config_version=5
 config/name="Projecte català"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
