@@ -15,7 +15,6 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 [filesystem]
 
-import/blender/enabled=false
 import/fbx/enabled=false
 
 [rendering]
