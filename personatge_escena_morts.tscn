@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5kgutus35ai4"]
+
+[ext_resource type="Script" path="res://Personatge_escena_morts.gd" id="1_6a4l4"]
+[ext_resource type="PackedScene" uid="uid://bag38270qa7xf" path="res://Models/CrisitiaNPC1.blend" id="2_gsrx0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wp1ov"]
+size = Vector3(4.7749, 16.5217, 8.80169)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n41ac"]
+size = Vector3(0.607179, 1.70882, 0.295686)
+
+[node name="personatge escena morts" type="CharacterBody3D"]
+script = ExtResource("1_6a4l4")
+
+[node name="Cap" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.28423, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Cap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4656, 0)
+
+[node name="Positioner" type="Node3D" parent="Cap/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05048, -1.62309, -2.34661)
+
+[node name="CrisitiaNPC1" parent="Cap/Camera3D" instance=ExtResource("2_gsrx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.86595, 0)
+visible = false
+
+[node name="Area3D" type="Area3D" parent="Cap/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.74983, 3.83794)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cap/Camera3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.225342, 4.68963, -6.64606)
+shape = SubResource("BoxShape3D_wp1ov")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0826411, -0.29984, 1.03588)
+shape = SubResource("BoxShape3D_n41ac")
+
+[connection signal="body_entered" from="Cap/Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]

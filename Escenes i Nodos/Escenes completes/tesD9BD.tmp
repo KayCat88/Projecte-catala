@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbg2hct1wvf8i"]
+
+[ext_resource type="PackedScene" uid="uid://b0y0xe1kq83rq" path="res://Escenes i Nodos/Nodos petits/Personatge test.tscn" id="1_cb2af"]
+[ext_resource type="Environment" uid="uid://8odl32q64t7r" path="res://Escenes i Nodos/Escenes completes/environment_sunrise_test.tres" id="2_w4s6b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b0m1a"]
+size = Vector3(21.2981, 1, 11.7606)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sfci4"]
+
+[node name="Test" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_cb2af")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05689, 0)
+
+[node name="Cap" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.64077, 0.445204)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Cap"]
+transform = Transform3D(-0.998443, 0, 0.0557867, 0, 1, 0, -0.0557867, 0, -0.998443, -0.0233154, 0.180787, 0.5417)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.10559, 0, 2.38031)
+shape = SubResource("BoxShape3D_b0m1a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(20.8436, 0, 0, 0, 1, 0, 0, 0, 11.7607, -1, 0, 2.09015)
+mesh = SubResource("BoxMesh_sfci4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(4.40462, 0.000418549, 0.00442595, 0.00151569, 0.0744427, -11.7281, -0.0019619, 0.997225, 0.875496, -1, 3.43773, 11.0673)
+mesh = SubResource("BoxMesh_sfci4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.842737, 0.40974, -0.349152, -0.358771, 0.911044, 0.203183, 0.401344, -0.0459641, 0.914773, -4.27975, 10.6351, 11.167)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_w4s6b")

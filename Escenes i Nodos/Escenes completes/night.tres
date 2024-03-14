@@ -1,0 +1,15 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://4uvxcmu5y8m4"]
+
+[ext_resource type="Texture2D" uid="uid://7l5c43g80qtg" path="res://Materials/kloppenheim_02_puresky_1k.hdr" id="1_kd6m8"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0orym"]
+panorama = ExtResource("1_kd6m8")
+
+[sub_resource type="Sky" id="Sky_ctulj"]
+sky_material = SubResource("PanoramaSkyMaterial_0orym")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_ctulj")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)

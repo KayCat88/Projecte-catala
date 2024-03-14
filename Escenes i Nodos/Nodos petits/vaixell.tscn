@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctywywoql15lg"]
+
+[ext_resource type="PackedScene" uid="uid://cae3fkw0i35mb" path="res://Models/Barco.blend" id="1_hko4d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_diuje"]
+size = Vector3(19.4009, 1.41394, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qw3nc"]
+size = Vector3(20.3906, 6.0817, 17.0152)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rf1gt"]
+size = Vector3(2.09485, 15.856, 53.7227)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdnx2"]
+size = Vector3(17.1267, 11.3813, 1)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166016, -5.79303, 1.5)
+shape = SubResource("BoxShape3D_diuje")
+
+[node name="Barco" parent="." instance=ExtResource("1_hko4d")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.397552, -2.9437, 20.3472)
+shape = SubResource("BoxShape3D_qw3nc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.26442, -17.5682)
+shape = SubResource("BoxShape3D_qw3nc")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.64995, 2.53143, 0.886719)
+shape = SubResource("BoxShape3D_rf1gt")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50773, 2.53173, 0.886719)
+shape = SubResource("BoxShape3D_rf1gt")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78577, 3.69702, 28.5972)
+shape = SubResource("BoxShape3D_fdnx2")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.223202, 3.69702, -24.8527)
+shape = SubResource("BoxShape3D_fdnx2")

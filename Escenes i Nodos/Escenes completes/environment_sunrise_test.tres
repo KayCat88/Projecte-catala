@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://8odl32q64t7r"]
+
+[ext_resource type="Texture2D" uid="uid://do0rv1nrdl25t" path="res://Materials/wasteland_clouds_puresky_1k.hdr" id="1_wabed"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vmvq4"]
+panorama = ExtResource("1_wabed")
+
+[sub_resource type="Sky" id="Sky_fyg4x"]
+sky_material = SubResource("PanoramaSkyMaterial_vmvq4")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.3
+sky = SubResource("Sky_fyg4x")

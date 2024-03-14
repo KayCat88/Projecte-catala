@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0fbyq28abl3x"]
+
+[ext_resource type="Script" path="res://Escenes i Nodos/Nodos petits/mort.gd" id="1_pjbpj"]
+[ext_resource type="PackedScene" uid="uid://jvuhtsmlbpw" path="res://Models/ModelCosMort.blend" id="1_yidsx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4f7r"]
+size = Vector3(0.228653, 8.43506, 0.182007)
+
+[node name="Mort" type="CharacterBody3D"]
+script = ExtResource("1_pjbpj")
+
+[node name="ModelCosMort" parent="." instance=ExtResource("1_yidsx")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 3.29257, 0.032974, 0)
+
+[node name="Skeleton3D" parent="ModelCosMort/Armature_001" index="0"]
+bones/0/rotation = Quaternion(-0.0906275, 1.18719e-07, -1.08036e-08, 0.995885)
+bones/1/rotation = Quaternion(0.0568847, 3.89208e-16, 1.35624e-08, 0.998381)
+bones/2/rotation = Quaternion(0.0338301, 1.11086e-16, 8.06573e-09, 0.999428)
+bones/3/rotation = Quaternion(0.175508, 6.76636e-16, 4.18443e-08, 0.984478)
+bones/4/rotation = Quaternion(-0.0939616, 1.18682e-07, -3.36033e-08, 0.995576)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.000185145, 0.0259126, -0.999609, -0.010527)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.0526258, 8.27033e-05, -0.0242797, 0.998319)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.0561614, -0.0174399, -0.0166868, 0.99813)
+bones/8/rotation = Quaternion(-0.0384924, 0.012668, -0.0371859, 0.998486)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/position = Vector3(0.323989, 0.0601988, 0.034904)
+bones/9/rotation = Quaternion(0.00503874, 0.0265508, 0.998789, 0.0411066)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(-0.0458667, 6.91863e-05, -0.00902476, 0.998907)
+bones/11/rotation = Quaternion(0.981796, 0.0616313, -0.0505795, 0.172398)
+bones/12/rotation = Quaternion(0.117959, -7.18061e-10, 0.0034341, 0.993012)
+bones/13/rotation = Quaternion(0.000185145, -0.0259126, 0.999609, -0.010527)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(0.0526258, -8.27033e-05, 0.0242797, 0.998319)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(0.0561614, 0.0174399, 0.0166868, 0.99813)
+bones/16/rotation = Quaternion(-0.0384924, -0.012668, 0.0371859, 0.998486)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/position = Vector3(-0.323989, 0.0601988, 0.034904)
+bones/17/rotation = Quaternion(-0.00503874, 0.0265508, 0.998789, -0.0411066)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(-0.0458667, -6.91863e-05, 0.00902476, 0.998907)
+bones/19/rotation = Quaternion(0.981796, -0.0616313, 0.0505795, 0.172398)
+bones/20/rotation = Quaternion(0.117959, 7.18061e-10, -0.0034341, 0.993012)
+bones/21/position = Vector3(0.535126, -0.214989, 0.134111)
+bones/21/rotation = Quaternion(0.262983, -0.19385, -0.943136, -0.0612974)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/position = Vector3(-0.53846, -0.215112, 0.134111)
+bones/22/rotation = Quaternion(0.263129, 0.193651, 0.943182, -0.060587)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(0.430435, 0.416028, -0.588679, 0.543234)
+bones/23/scale = Vector3(1, 0.999999, 1)
+bones/24/rotation = Quaternion(0.175691, 0.139015, 0.688412, 0.689852)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/rotation = Quaternion(-0.703605, -0.281389, -0.408203, 0.509048)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/rotation = Quaternion(0.430435, -0.416028, 0.588679, 0.543234)
+bones/26/scale = Vector3(1, 0.999999, 1)
+bones/27/rotation = Quaternion(0.175691, -0.139015, -0.688412, 0.689852)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/rotation = Quaternion(-0.703605, 0.281389, 0.408203, 0.509048)
+bones/28/scale = Vector3(1, 1, 1)
+bones/29/rotation = Quaternion(0.112046, 0.00250666, -0.0267672, 0.993339)
+bones/30/rotation = Quaternion(0.112046, 0.00250666, -0.0267672, 0.993339)
+bones/31/rotation = Quaternion(0.213561, 1.16459e-07, 2.54584e-08, 0.97693)
+bones/32/rotation = Quaternion(0.213561, -1.16459e-07, -2.54584e-08, 0.97693)
+
+[node name="AnimationPlayer" parent="ModelCosMort" index="1"]
+autoplay = "Quiet"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.288422, 0.216871, -0.027031)
+shape = SubResource("BoxShape3D_h4f7r")
+
+[editable path="ModelCosMort"]

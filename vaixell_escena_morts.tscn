@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bflds82jtd8rn"]
+
+[ext_resource type="PackedScene" uid="uid://cae3fkw0i35mb" path="res://Models/Barco.blend" id="1_pljio"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_inugt"]
+size = Vector3(19.4009, 1.41394, 22.6675)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j2rwj"]
+size = Vector3(20.3906, 4.4764, 17.0152)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_quhux"]
+size = Vector3(17.1267, 11.3813, 1)
+
+[node name="Vaixell escena morts" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166016, -5.79303, 1.43823)
+shape = SubResource("BoxShape3D_inugt")
+
+[node name="Barco" parent="." instance=ExtResource("1_pljio")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.397552, -2.9437, 20.3472)
+shape = SubResource("BoxShape3D_j2rwj")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.06707, -17.5682)
+shape = SubResource("BoxShape3D_j2rwj")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78577, 3.69702, 28.5972)
+shape = SubResource("BoxShape3D_quhux")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.223202, 3.69702, -24.8527)
+shape = SubResource("BoxShape3D_quhux")
