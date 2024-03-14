@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bflds82jtd8rn"]
+[gd_scene load_steps=7 format=3 uid="uid://bflds82jtd8rn"]
 
-[ext_resource type="PackedScene" uid="uid://cae3fkw0i35mb" path="res://Models/Barco.blend" id="1_pljio"]
+[ext_resource type="PackedScene" uid="uid://cae3fkw0i35mb" path="res://Models/Barco.blend" id="1_p373s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_inugt"]
 size = Vector3(19.4009, 1.41394, 22.6675)
@@ -11,14 +11,17 @@ size = Vector3(20.3906, 4.4764, 17.0152)
 [sub_resource type="BoxShape3D" id="BoxShape3D_quhux"]
 size = Vector3(17.1267, 11.3813, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tp1bg"]
+size = Vector3(1.56836, 8.90384, 23.9088)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_snmt4"]
+size = Vector3(1.56836, 1.4861, 23.9088)
+
 [node name="Vaixell escena morts" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166016, -5.79303, 1.43823)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166016, -6.16567, 1.43823)
 shape = SubResource("BoxShape3D_inugt")
-
-[node name="Barco" parent="." instance=ExtResource("1_pljio")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.397552, -2.9437, 20.3472)
@@ -35,3 +38,14 @@ shape = SubResource("BoxShape3D_quhux")
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.223202, 3.69702, -24.8527)
 shape = SubResource("BoxShape3D_quhux")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37966, -1.02484, 0.965759)
+shape = SubResource("BoxShape3D_tp1bg")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4577, -4.73371, 0.965759)
+shape = SubResource("BoxShape3D_snmt4")
+
+[node name="Barco" parent="." instance=ExtResource("1_p373s")]
+transform = Transform3D(11.08, 0, 0, 0, 11.08, 0, 0, 0, 11.08, 0, 0, 0)

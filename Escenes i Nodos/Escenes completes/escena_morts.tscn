@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://8pyb0fqyq2x5"]
+
+[ext_resource type="PackedScene" uid="uid://bflds82jtd8rn" path="res://vaixell_escena_morts.tscn" id="1_6riwu"]
+[ext_resource type="PackedScene" uid="uid://d0fbyq28abl3x" path="res://Escenes i Nodos/Nodos petits/mort.tscn" id="2_n2tdt"]
+[ext_resource type="PackedScene" uid="uid://c5kgutus35ai4" path="res://personatge_escena_morts.tscn" id="3_gslxh"]
+[ext_resource type="Environment" uid="uid://8odl32q64t7r" path="res://Escenes i Nodos/Escenes completes/environment_sunrise_test.tres" id="4_p4lsd"]
+[ext_resource type="PackedScene" uid="uid://cppclabacvylu" path="res://Escenes i Nodos/Nodos petits/aigua.tscn" id="5_shx0d"]
+[ext_resource type="PackedScene" uid="uid://weh1odq7h0cg" path="res://Escenes i Nodos/Nodos petits/osman_mort.tscn" id="6_rgh4r"]
+[ext_resource type="PackedScene" uid="uid://bmc7pnh5tpd84" path="res://Escenes i Nodos/Nodos petits/idriss_mort.tscn" id="7_otfrx"]
+[ext_resource type="PackedScene" uid="uid://d1tb5bll2trle" path="res://Escenes i Nodos/Nodos petits/malek_mort.tscn" id="8_5r276"]
+[ext_resource type="Script" path="res://Escenes i Nodos/Escenes completes/Canvi_Morts.gd" id="9_mt4rh"]
+[ext_resource type="PackedScene" uid="uid://d34htwvbfw1bb" path="res://Escenes i Nodos/Escenes completes/canviador.tscn" id="10_xa2lt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8n5r0"]
+size = Vector3(19.068, 1.8595, 50.8481)
+
+[node name="Escena morts" type="Node3D"]
+
+[node name="Caiguda" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.378, 1.0225, 1.20942)
+
+[node name="Vaixell escena morts" parent="." instance=ExtResource("1_6riwu")]
+
+[node name="Mort" parent="." groups=["cossos"] instance=ExtResource("2_n2tdt")]
+transform = Transform3D(-0.999672, -0.0253044, -0.00401416, -0.0253046, 0.99968, 0, 0.00401287, 0.000101577, -0.999992, 6.12577, -5.38818, -3.78259)
+
+[node name="Mort2" parent="." groups=["cossos"] instance=ExtResource("2_n2tdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.12342, -5.086, 7.09101)
+
+[node name="personatge escena morts" parent="." node_paths=PackedStringArray("head", "camera", "positioner") instance=ExtResource("3_gslxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36358, 0, 4.11015)
+head = NodePath("Cap")
+camera = NodePath("Cap/Camera3D")
+positioner = NodePath("Cap/Camera3D/Positioner")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.853651, 0.520846, 0, -0.520846, 0.853651, 0, 15.4665, 39.9815)
+light_color = Color(1, 0.937255, 0.815686, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_p4lsd")
+
+[node name="aigua" parent="." instance=ExtResource("5_shx0d")]
+transform = Transform3D(2000, 0, 0, 0, 1, 0, 0, 0, 2000, 0, -7.64552, 0)
+
+[node name="OsmanMort" parent="." instance=ExtResource("6_rgh4r")]
+transform = Transform3D(-0.123168, 0, 0.992386, 0, 1, 0, -0.992386, 0, -0.123168, -6.48429, -4.22645, 7.93141)
+
+[node name="OsmanMort2" parent="." instance=ExtResource("7_otfrx")]
+transform = Transform3D(0.238127, 0, 0.971234, 0, 1, 0, -0.971234, 0, 0.238127, -7.15182, -4.48615, -2.8494)
+
+[node name="OsmanMort3" parent="." instance=ExtResource("8_5r276")]
+transform = Transform3D(0.0725419, 0, 0.997365, 0, 1, 0, -0.997365, 0, 0.0725419, -7.15182, -4.20557, 2.07911)
+
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("canviador")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.049, -11.835, 0.177884)
+script = ExtResource("9_mt4rh")
+canviador = NodePath("../Canviador")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24004, 0.429749, 0.516846)
+shape = SubResource("BoxShape3D_8n5r0")
+
+[node name="Canviador" parent="." instance=ExtResource("10_xa2lt")]
+next_level = "res://2D/text_1.tscn"
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+
+[editable path="Vaixell escena morts"]
+[editable path="personatge escena morts"]

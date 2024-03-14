@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 15.0
-const JUMP_VELOCITY = 25
+const JUMP_VELOCITY = 0
 
 @export var head: Node3D
 @export var camera: Node3D
@@ -64,7 +64,7 @@ func _physics_process(delta):
 			agafat = false
 			cos_mort.Caure()
 			camera.remove_child(cos_mort)
-			get_parent().add_child(cos_mort)
+			get_parent().get_child(0).add_child(cos_mort)
 			cos_mort = null
 			
 	if Input.is_action_just_pressed("clic") and agafat == false and cos_mort != null:

@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://5e7uutcvyhjd"]
+
+[ext_resource type="PackedScene" uid="uid://d34htwvbfw1bb" path="res://Escenes i Nodos/Escenes completes/canviador.tscn" id="1_2pyic"]
+[ext_resource type="PackedScene" uid="uid://bflds82jtd8rn" path="res://vaixell_escena_morts.tscn" id="1_xrd0f"]
+[ext_resource type="PackedScene" uid="uid://c70ob74d0av14" path="res://blanca_mort.tscn" id="4_cktb2"]
+[ext_resource type="Environment" uid="uid://8odl32q64t7r" path="res://Escenes i Nodos/Escenes completes/environment_sunrise_test.tres" id="4_jn310"]
+[ext_resource type="PackedScene" uid="uid://clvror12cvge2" path="res://Models/ModelSaïd.blend" id="5_4yyxi"]
+[ext_resource type="PackedScene" uid="uid://cppclabacvylu" path="res://Escenes i Nodos/Nodos petits/aigua.tscn" id="5_ceuw7"]
+
+[node name="Escena morts" type="Node3D"]
+
+[node name="Canviador" parent="." instance=ExtResource("1_2pyic")]
+
+[node name="Vaixell escena morts" parent="." instance=ExtResource("1_xrd0f")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.853651, 0.520846, 0, -0.520846, 0.853651, 0, 15.4665, 39.9815)
+light_color = Color(1, 0.937255, 0.815686, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_jn310")
+
+[node name="aigua" parent="." instance=ExtResource("5_ceuw7")]
+transform = Transform3D(2000, 0, 0, 0, 1, 0, 0, 0, 2000, 0, -7.64552, 0)
+
+[node name="Blanca mort" parent="." node_paths=PackedStringArray("animation_player", "canviador") instance=ExtResource("4_cktb2")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 4, -7, 0)
+animation_player = NodePath("ModelBlanca/AnimationPlayer")
+canviador = NodePath("../Canviador")
+
+[node name="Skeleton3D" parent="Blanca mort/ModelBlanca/Armature_001" index="0"]
+bones/0/rotation = Quaternion(-0.0906275, 1.18719e-07, -1.08036e-08, 0.995885)
+bones/2/rotation = Quaternion(0.0338301, 1.11086e-16, 8.06573e-09, 0.999428)
+bones/3/rotation = Quaternion(0.175508, 6.76636e-16, 4.18443e-08, 0.984478)
+bones/4/rotation = Quaternion(-0.0939616, 1.18682e-07, -3.36033e-08, 0.995576)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.0561614, -0.0174399, -0.0166868, 0.99813)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.591559, -6.41136e-08, -0.0100252, 0.8062)
+bones/12/rotation = Quaternion(0.117959, -7.18061e-10, 0.0034341, 0.993012)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(0.0561614, 0.0174399, 0.0166868, 0.99813)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.591559, 6.41136e-08, 0.0100252, 0.8062)
+bones/20/rotation = Quaternion(0.117959, 7.18061e-10, -0.0034341, 0.993012)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/scale = Vector3(1, 0.999999, 1)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/scale = Vector3(1, 0.999999, 1)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/scale = Vector3(1, 1, 1)
+bones/33/scale = Vector3(1, 1, 1)
+
+[node name="ModelSaïd" parent="." instance=ExtResource("5_4yyxi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+
+[node name="Skeleton3D" parent="ModelSaïd/Armature_001" index="0"]
+bones/0/rotation = Quaternion(-0.0906275, 1.18719e-07, -1.08036e-08, 0.995885)
+bones/2/rotation = Quaternion(0.0338301, 1.11086e-16, 8.06573e-09, 0.999428)
+bones/3/rotation = Quaternion(0.175508, 6.76636e-16, 4.18443e-08, 0.984478)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0186861, 0.0179534, -0.695033, 0.718511)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.0526258, 8.27036e-05, -0.0242797, 0.998319)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.0561614, -0.0174399, -0.0166868, 0.99813)
+bones/8/rotation = Quaternion(-0.0384924, 0.012668, -0.0371859, 0.998486)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/position = Vector3(0.323989, 0.0601988, 0.034904)
+bones/9/rotation = Quaternion(0.000689979, 0.0480396, 0.998363, -0.0310314)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(-0.0458667, 6.91862e-05, -0.00902476, 0.998907)
+bones/11/rotation = Quaternion(0.591559, -6.43903e-08, -0.0100252, 0.8062)
+bones/12/rotation = Quaternion(0.117959, -7.18061e-10, 0.0034341, 0.993012)
+bones/13/rotation = Quaternion(-0.0186861, -0.0179534, 0.695033, 0.718511)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(0.0526258, -8.27036e-05, 0.0242797, 0.998319)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(0.0561614, 0.0174399, 0.0166868, 0.99813)
+bones/16/rotation = Quaternion(-0.0384924, -0.012668, 0.0371859, 0.998486)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/position = Vector3(-0.323989, 0.0601988, 0.034904)
+bones/17/rotation = Quaternion(-0.000689979, 0.0480396, 0.998363, 0.0310314)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(-0.0458667, -6.91862e-05, 0.00902476, 0.998907)
+bones/19/rotation = Quaternion(0.591559, 6.43903e-08, 0.0100252, 0.8062)
+bones/20/rotation = Quaternion(0.117959, 7.48602e-10, -0.0034341, 0.993012)
+bones/21/rotation = Quaternion(0.321584, 0.0576326, -0.69306, 0.642597)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/position = Vector3(-2.83183, 2.03847, 0.134111)
+bones/22/rotation = Quaternion(0.321541, -0.0578748, 0.692575, 0.643119)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(0.430435, 0.416028, -0.588679, 0.543234)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/rotation = Quaternion(-0.703605, -0.281389, -0.408203, 0.509048)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/rotation = Quaternion(0.430435, -0.416028, 0.588679, 0.543234)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/rotation = Quaternion(-0.703605, 0.281389, 0.408203, 0.509048)
+bones/28/scale = Vector3(1, 1, 1)
+bones/29/rotation = Quaternion(0.112046, 0.00250666, -0.0267672, 0.993339)
+bones/30/rotation = Quaternion(0.112046, 0.00250666, -0.0267672, 0.993339)
+bones/33/rotation = Quaternion(0.710914, 0.00159376, -0.00836419, 0.703227)
+bones/33/scale = Vector3(1, 1, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.384696, -0.516455, 0.765038, 0.098, 0.846989, 0.522499, -0.917826, -0.126029, 0.376446, 3, -2, -1)
+
+[editable path="Blanca mort"]
+[editable path="Blanca mort/ModelBlanca"]
+[editable path="ModelSaïd"]

@@ -18,7 +18,7 @@ func _physics_process(delta):
 	move_and_slide()
 func Caure():
 	caure = true
-	velocity.x += 1
+	position.z += 1
 
 func No_caure():
 	caure = false

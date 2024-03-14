@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jvuhtsmlbpw" path="res://Models/ModelCosMort.blend" id="1_yidsx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h4f7r"]
-size = Vector3(0.228653, 8.43506, 0.182007)
+size = Vector3(0.228653, 3.80988, 0.182007)
 
 [node name="Mort" type="CharacterBody3D"]
 script = ExtResource("1_pjbpj")
@@ -72,7 +72,7 @@ bones/32/rotation = Quaternion(0.213561, -1.16459e-07, -2.54584e-08, 0.97693)
 autoplay = "Quiet"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.288422, 0.216871, -0.027031)
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.462952, 0.216871, -0.027031)
 shape = SubResource("BoxShape3D_h4f7r")
 
 [editable path="ModelCosMort"]

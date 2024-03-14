@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://duljyidb0j2vf"]
+
+[ext_resource type="Texture2D" uid="uid://ewx5qwx4t33m" path="res://Escenes i Nodos/Escenes completes/kloppenheim_07_puresky_1k (1).hdr" id="1_dko3e"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vmvq4"]
+panorama = ExtResource("1_dko3e")
+
+[sub_resource type="Sky" id="Sky_fyg4x"]
+sky_material = SubResource("PanoramaSkyMaterial_vmvq4")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.3
+sky = SubResource("Sky_fyg4x")
